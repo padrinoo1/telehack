@@ -26,6 +26,11 @@ function on_msg_receive (msg)
           mark_read(receiver, ok_cb, false)
         end
       end
+      if redis:get("spam") then
+        if redis:get("spam") == "vagir" then
+          mark_read(receiver, ok_cb, false)
+     end
+    end
     end
   end
 end
